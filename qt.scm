@@ -310,7 +310,7 @@ ___declare(type, "qthttp;(c-pointer \"QHttp\");qt:->pointer;qt:pointer->http")
 	((string=? "QTreeWidget" (qt:classname w)) (qt:addtreewidgetitem w x))
 	(else (error 'qt:add "invalid widget" w x)) ) )
 
-(define (qt:item w i) (and (positive? i) (qt:listwidgetitem w i)))
+(define (qt:item w i) (and (>= i 0) (qt:listwidgetitem w i)))
 (define qt:clear qt:clearlistwidget)
 
 (define (qt:set-headers w x)
